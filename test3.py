@@ -1,13 +1,5 @@
 import cv2
 import time
-
-
-def rescale_frame(frame, percent=50):
-    width = int(frame.shape[1] * percent/ 100)
-    height = int(frame.shape[0] * percent/ 100)
-    dim = (width, height)
-    return cv2.resize(frame, dim, interpolation =cv2.INTER_AREA)
-
 # Source data : Video File
 video_file = 'video.mp4'
 # Read the source video file
@@ -31,7 +23,7 @@ while True:
 	#convert to grey scale image
 	frame_temp = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 	start = time.time()
-	frame_temp = rescale_frame(frame, percent=40)
+	#frame_temp = rescale_frame(frame, percent=40)
 	# Detect Cars, Pedestrians
 	cars = car_tracker.detectMultiScale(frame_temp,1.1,2)
 	print("Car Detected at loactions: ")
