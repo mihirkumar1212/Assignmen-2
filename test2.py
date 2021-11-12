@@ -9,7 +9,7 @@ def rescale_frame(frame, percent=75):
     return cv2.resize(frame, dim, interpolation =cv2.INTER_AREA)
 
 # Source data : Video File
-video_file = 'Road1.mp4'
+video_file = 'test1.mp4'
 # Read the source video file
 cap = cv2.VideoCapture(video_file)
 
