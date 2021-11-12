@@ -9,7 +9,7 @@ def rescale_frame(frame, percent=75):
     return cv2.resize(frame, dim, interpolation =cv2.INTER_AREA)
 
 # Source data : Video File
-video_file = 'test1.mp4'
+video_file = 'test5.mp4'
 # Read the source video file
 cap = cv2.VideoCapture(video_file)
 
@@ -34,11 +34,11 @@ while True:
 	frame_temp = rescale_frame(frame, percent=40)
 	# Detect Cars, Pedestrians
 	cars = car_tracker.detectMultiScale(frame_temp,1.1,2)
-	print("Car Detected at loaction: ")
+	print("Car Detected at loactions: ")
 	print(cars)
 	pedestrians = pedestrian_tracker.detectMultiScale(frame_temp,1.1,2)
-	print("Pedestrain Detected at loaction: ")
-	print(pedestrians)
+	print("Pedestrain Detected at loactions: ")
+	print (pedestrians)
 	end = time.time()
 
 	# Draw rectangle around the cars
