@@ -22,7 +22,7 @@ while True:
 	
 	#convert to grey scale image
 	frame_temp = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-	start = time.time()
+	
 	#frame_temp = rescale_frame(frame, percent=40)
 	# Detect Cars, Pedestrians
 	cars = car_tracker.detectMultiScale(frame_temp,1.1,2)
